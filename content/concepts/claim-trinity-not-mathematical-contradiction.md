@@ -7,7 +7,7 @@ edges:
   - { type: refutes, target: claim-fully-god-language-invites-partialism-charge }
   - { type: refuting_case_of, target: trinity }
   - { type: supports, target: trinity }
-  - { type: parallels_with, target: claim-essence-persons-distinction-resolves-tritheism }
+  - { type: supports, target: claim-essence-persons-distinction-resolves-tritheism }
 argumentation:
   stance: [for-christianity, against-islam, inter-religious-polemic]
   tradition: [christian-apologetic, evangelical, scholastic]

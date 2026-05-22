@@ -9,6 +9,7 @@ edges:
   - { type: supports, target: trinity }
   - { type: builds_on, target: tertullian }
   - { type: builds_on, target: basil-the-great }
+  - { type: supports, target: claim-trinity-not-mathematical-contradiction }
 argumentation:
   stance: [for-christianity, against-islam, inter-religious-polemic]
   tradition: [christian-apologetic, patristic, catholic, orthodox-eastern]
