@@ -1,0 +1,23 @@
+{
+  "name": "bible-semantic-graph",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Personal knowledge-graph CMS centered on the Bible. See CONTEXT.md and docs/adr/.",
+  "scripts": {
+    "dev": "concurrently -n app,api,pipe -c blue,magenta,green --kill-others-on-fail \"bun run dev:app\" \"bun run dev:api\" \"bun run dev:pipe\"",
+    "dev:app": "cd app && bun run dev",
+    "dev:api": "cd sidecar && uv run granian --interface asgi --reload api.main:app --host 0.0.0.0 --port 7655",
+    "dev:pipe": "cd sidecar && uv run python -m pipeline.watch",
+    "ingest": "cd sidecar && uv run python -m pipeline.ingest",
+    "validate": "cd sidecar && uv run python -m pipeline.validate",
+    "analyze": "cd sidecar && uv run python -m pipeline.analyze",
+    "check-bodies": "cd sidecar && uv run python scripts/check_body_lengths.py",
+    "build": "bun run validate && bun run ingest && cd app && bun run build",
+    "start": "concurrently -n app,api -c blue,magenta --kill-others-on-fail \"cd app && PORT=7654 HOST=0.0.0.0 bun ./build/index.js\" \"cd sidecar && uv run granian --interface asgi api.main:app --host 0.0.0.0 --port 7655\"",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "husky": "^9.1.7"
+  }
+}

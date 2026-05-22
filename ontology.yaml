@@ -1,0 +1,404 @@
+node_types:
+- name: Person
+  status: canonical
+  description: A human (biblical, historical, or legendary)
+- name: Deity
+  status: canonical
+  description: A divine being (YHWH, gods of surrounding mythologies)
+- name: Place
+  status: canonical
+  description: A geographic location
+- name: Event
+  status: canonical
+  description: A discrete narrative happening
+- name: Text
+  status: canonical
+  description: A book, scroll, or written work
+- name: Passage
+  status: canonical
+  description: A specific pericope within a Text, commentary attached
+- name: Concept
+  status: canonical
+  description: An abstract theological or philosophical idea
+- name: Argument
+  status: canonical
+  description: A reasoned position taken by some interpreter or tradition
+- name: Theory
+  status: canonical
+  description: A structured hypothesis (documentary hypothesis, Q source, etc.)
+- name: Mythological
+  status: canonical
+  description: A non-biblical mythological figure, story, or motif used for comparison
+- name: Tradition
+  status: canonical
+  description: A religious / interpretive lineage (Rabbinic, Patristic, Reformed,
+    etc.)
+- name: Manuscript
+  status: canonical
+  description: A physical textual witness (Dead Sea Scrolls, Masoretic codices, NT
+    papyri, ancient versions)
+- name: Council
+  status: canonical
+  description: An ecclesiastical council or synod (Nicaea, Chalcedon, Trent, Vatican
+    II, etc.)
+- name: Angel
+  status: seen
+edge_types:
+- name: father_of
+  inverse: son_of
+  status: canonical
+- name: mother_of
+  inverse: son_of
+  status: canonical
+- name: son_of
+  inverse: father_of
+  status: canonical
+- name: daughter_of
+  inverse: father_of
+  status: canonical
+- name: spouse_of
+  symmetric: true
+  status: canonical
+- name: sibling_of
+  symmetric: true
+  status: canonical
+- name: descendant_of
+  inverse: ancestor_of
+  status: canonical
+- name: ancestor_of
+  inverse: descendant_of
+  status: canonical
+- name: lived_in
+  inverse: home_of
+  status: canonical
+- name: born_in
+  inverse: birthplace_of
+  status: canonical
+- name: died_in
+  inverse: deathplace_of
+  status: canonical
+- name: travelled_to
+  inverse: visited_by
+  status: canonical
+- name: located_in
+  inverse: contains
+  status: canonical
+- name: occurs_at
+  inverse: site_of
+  status: canonical
+- name: participates_in
+  inverse: involves
+  status: canonical
+- name: precedes
+  inverse: follows
+  status: canonical
+- name: appears_in
+  inverse: features
+  status: canonical
+- name: discussed_in
+  inverse: discusses
+  status: canonical
+- name: cites
+  inverse: cited_by
+  status: canonical
+- name: fulfills
+  inverse: fulfilled_by
+  status: canonical
+- name: prefigures
+  inverse: prefigured_by
+  status: canonical
+- name: parallels_with
+  symmetric: true
+  status: canonical
+- name: contradicts
+  symmetric: true
+  status: canonical
+- name: builds_on
+  inverse: extended_by
+  status: canonical
+- name: refutes
+  inverse: refuted_by
+  status: canonical
+- name: instance_of
+  inverse: has_instance
+  status: canonical
+- name: related_to
+  symmetric: true
+  status: canonical
+- name: invokes
+  inverse: invoked_by
+  status: canonical
+  description: A invokes B — B is a deeper question/principle A engages
+- name: invoked_by
+  inverse: invokes
+  status: canonical
+- name: case_of
+  inverse: has_case
+  status: canonical
+  description: A case_of B — A is a specific instance of the more general B
+- name: has_case
+  inverse: case_of
+  status: canonical
+- name: presupposes
+  inverse: presupposed_by
+  status: canonical
+  description: A presupposes B — B is taken for granted by A
+- name: presupposed_by
+  inverse: presupposes
+  status: canonical
+- name: specializes
+  inverse: generalizes
+  status: canonical
+  description: A specializes B — A is a narrower version of B
+- name: generalizes
+  inverse: specializes
+  status: canonical
+- name: concerns
+  inverse: concern_of
+  status: canonical
+  description: Relational Node → entity it is "about" or "between". Materialized from
+    the frontmatter `concerns:` field.
+- name: concern_of
+  inverse: concerns
+  status: canonical
+- name: supports
+  inverse: supported_by
+  status: canonical
+  description: A supports B — A provides evidence/sub-argument for B's claim. A is
+    the sub-claim, B is the larger argumentative position.
+- name: supported_by
+  inverse: supports
+  status: canonical
+- name: responds_to
+  inverse: has_response
+  status: canonical
+  description: A responds_to B — A is a measured response to B, weaker than `refutes`.
+    Use when "here's an answer" rather than "this disproves it."
+- name: has_response
+  inverse: responds_to
+  status: canonical
+- name: mentions
+  inverse: mentioned_in
+  status: canonical
+  description: Implicit edge from [[wiki-links]] in body text
+- name: features
+  inverse: appears_in
+  status: canonical
+- name: follows
+  inverse: precedes
+  status: canonical
+- name: cited_by
+  inverse: cites
+  status: canonical
+- name: wrote
+  inverse: written_by
+  status: canonical
+  description: Person → Text/Document they composed
+- name: written_by
+  inverse: wrote
+  status: canonical
+- name: prophet_to
+  inverse: prophesied_to_by
+  status: canonical
+- name: disciple_of
+  inverse: had_disciple
+  status: canonical
+- name: practitioner_of
+  inverse: has_practitioner
+  status: canonical
+  description: Person → Tradition they advanced / argued within
+- name: has_practitioner
+  inverse: practitioner_of
+  status: canonical
+- name: prefigured_by
+  inverse: prefigures
+  status: canonical
+- name: addressed_in
+  inverse: addresses
+  status: canonical
+- name: witnesses_to
+  inverse: witnessed_by
+  status: canonical
+  description: Manuscript → Text it preserves
+- name: preserves
+  inverse: preserved_by
+  status: canonical
+  description: Manuscript → Passage or textual variant
+- name: copy_of
+  inverse: copied_into
+  status: canonical
+  description: Manuscript stemmatics
+- name: authored
+  inverse: authored_by
+  status: canonical
+  description: Person → Text/Document composed (saints' writings, council canons)
+- name: attended
+  inverse: attended_by
+  status: canonical
+- name: presided_over
+  inverse: presided_by
+  status: canonical
+- name: condemned
+  inverse: condemned_by
+  status: canonical
+  description: Council/Person → Heresy/Person/Doctrine condemned
+- name: canonized
+  inverse: canonized_by
+  status: canonical
+- name: defined_doctrine
+  inverse: doctrine_defined_by
+  status: canonical
+- name: presided_by
+  status: seen
+- name: attended_by
+  status: seen
+- name: condemned_by
+  status: seen
+- name: tribe_of
+  status: seen
+- name: attributed_to
+  status: seen
+- name: codified_at
+  status: seen
+- name: extended_by
+  status: seen
+- name: authored_by
+  status: seen
+source_readers:
+  default: bible_gateway
+  readers:
+    bible_gateway:
+      label: BibleGateway (WEB)
+      url: https://www.biblegateway.com/passage/?search={book}+{passage}&version=WEB
+    sefaria:
+      label: Sefaria (Hebrew Bible)
+      url: https://www.sefaria.org/{book}.{passage}
+argumentation_axes:
+  stance:
+  - name: against-christianity
+    status: canonical
+  - name: against-islam
+    status: canonical
+  - name: against-judaism
+    status: canonical
+  - name: against-religion
+    status: canonical
+  - name: for-christianity
+    status: canonical
+  - name: for-islam
+    status: canonical
+  - name: for-judaism
+    status: canonical
+  - name: internal-christian-disagreement
+    status: canonical
+  - name: internal-jewish-disagreement
+    status: canonical
+  - name: internal-islamic-disagreement
+    status: canonical
+  - name: skeptical-of-religion
+    status: canonical
+  - name: inter-religious-polemic
+    status: canonical
+  tradition:
+  - name: islamic-apologetic
+    status: canonical
+  - name: jewish-anti-missionary
+    status: canonical
+  - name: christian-apologetic
+    status: canonical
+  - name: new-atheist
+    status: canonical
+  - name: mormon-apologetic
+    status: canonical
+  - name: jehovahs-witness
+    status: canonical
+  - name: reformed
+    status: canonical
+  - name: catholic
+    status: canonical
+  - name: eastern-orthodox
+    status: canonical
+  - name: liberal-protestant
+    status: canonical
+  - name: evangelical
+    status: canonical
+  - name: rabbinic
+    status: canonical
+  - name: patristic
+    status: canonical
+  - name: scholastic
+    status: canonical
+  - name: historical-critical-scholarship
+    status: canonical
+  - name: classical-kalam
+    status: seen
+  - name: ahmadiyya
+    status: seen
+  method:
+  - name: textual-critique
+    status: canonical
+  - name: historical-critique
+    status: canonical
+  - name: philosophical
+    status: canonical
+  - name: moral-critique
+    status: canonical
+  - name: presuppositional
+    status: canonical
+  - name: evidential
+    status: canonical
+  - name: from-internal-contradiction
+    status: canonical
+  - name: from-prophecy
+    status: canonical
+  - name: from-miracle
+    status: canonical
+  - name: comparative-religion
+    status: canonical
+  - name: archaeological
+    status: canonical
+  - name: linguistic
+    status: canonical
+  - name: typological
+    status: canonical
+  subject:
+  - name: christology
+    status: canonical
+  - name: scriptural-inerrancy
+    status: canonical
+  - name: scriptural-transmission
+    status: canonical
+  - name: trinity
+    status: canonical
+  - name: resurrection
+    status: canonical
+  - name: crucifixion
+    status: canonical
+  - name: canon-formation
+    status: canonical
+  - name: prophet-succession
+    status: canonical
+  - name: divine-providence
+    status: canonical
+  - name: theodicy
+    status: canonical
+  - name: ecclesiology
+    status: canonical
+  - name: soteriology
+    status: canonical
+  - name: eschatology
+    status: canonical
+  - name: pneumatology
+    status: canonical
+  - name: hamartiology
+    status: canonical
+  - name: anthropology
+    status: canonical
+  - name: mariology
+    status: canonical
+  - name: sacramentology
+    status: canonical
+  - name: ethics
+    status: canonical
+  - name: revelation
+    status: canonical

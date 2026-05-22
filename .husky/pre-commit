@@ -1,0 +1,6 @@
+# Validate all markdown nodes against the ontology before allowing the commit.
+# Catches: invalid frontmatter, unresolved [[wiki-links]], unknown edge targets,
+# new node/edge types not yet promoted in ontology.yaml.
+#
+# To bypass in an emergency: `git commit --no-verify`
+bun run validate
