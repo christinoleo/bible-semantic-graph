@@ -3,6 +3,7 @@ type: Person
 name: John of Damascus
 aliases: [Iōánnēs ho Damaskēnós, Ἰωάννης ὁ Δαμασκηνός, Yuḥannā al-Dimashqī, يوحنا الدمشقي, Mansur ibn Sarjun]
 edges:
+  - { type: practitioner_of, target: patristic }
   - { type: authored, target: fount-of-knowledge }
   - { type: authored, target: de-fide-orthodoxa }
   - { type: authored, target: three-treatises-on-the-divine-images }

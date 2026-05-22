@@ -4,8 +4,7 @@ name: Psalm 110:1 — YHWH Said to My Lord
 aliases: [Davidic Two-Lords Argument, Ps 110:1 Trinitarian Reading]
 concerns: [jesus]
 edges:
-  - { type: invokes, target: trinity, primary: true }
-  - { type: supports, target: trinity }
+  - { type: supports, target: trinity, primary: true }
   - { type: cites, target: psalms }
   - { type: parallels_with, target: claim-mark-14-62-son-of-man-at-right-hand, note: "Jesus combines Ps 110:1 with Dan 7:13 at the Sanhedrin" }
   - { type: parallels_with, target: claim-matt-3-16-17-trinitarian-theophany-at-baptism, note: "Father–Son distinction within YHWH" }

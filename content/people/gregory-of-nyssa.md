@@ -3,6 +3,7 @@ type: Person
 name: Gregory of Nyssa
 aliases: [Grēgórios Nýssēs, Γρηγόριος Νύσσης, Gregorius Nyssenus]
 edges:
+  - { type: practitioner_of, target: patristic }
   - { type: authored, target: life-of-moses }
   - { type: authored, target: on-the-soul-and-resurrection }
   - { type: authored, target: catechetical-oration }

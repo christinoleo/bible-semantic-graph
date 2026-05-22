@@ -21,6 +21,10 @@ class EdgeTypeDef:
     inverse: str | None = None
     symmetric: bool = False
     description: str | None = None
+    # Human-readable phrase used by the UI as the section header.
+    # Read as: "[this node] [label] [linked node]". Falls back to the
+    # snake_case'd type name when missing.
+    label: str | None = None
 
 
 @dataclass
@@ -122,6 +126,7 @@ def load_ontology(path: Path) -> Ontology:
             inverse=entry.get("inverse"),
             symmetric=bool(entry.get("symmetric", False)),
             description=entry.get("description"),
+            label=entry.get("label"),
         )
     onto.source_readers = raw.get("source_readers") or {}
     for axis, entries in (raw.get("argumentation_axes") or {}).items():

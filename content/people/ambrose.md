@@ -3,6 +3,7 @@ type: Person
 name: Ambrose of Milan
 aliases: [Aurelius Ambrosius, Ambrosius Mediolanensis, Sant'Ambrogio]
 edges:
+  - { type: practitioner_of, target: patristic }
   - { type: authored, target: on-the-mysteries }
   - { type: authored, target: on-the-duties-of-ministers }
   - { type: authored, target: hexaemeron-ambrose }

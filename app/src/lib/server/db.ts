@@ -60,6 +60,7 @@ function parseFullRow(row: Record<string, unknown>): NodeFull {
 		aliases: JSON.parse((row.aliases_json as string) || '[]'),
 		sources: JSON.parse((row.sources_json as string) || '[]'),
 		canon: JSON.parse((row.canon_json as string) || '[]'),
+		videos: JSON.parse((row.videos_json as string) || '[]'),
 		argumentation: argRaw ? JSON.parse(argRaw) : null,
 		body_html: row.body_html as string
 	};
@@ -143,6 +144,53 @@ export function totalCount(): number {
 	return row.n;
 }
 
+export function edgeCount(): number {
+	const row = db().query('SELECT COUNT(*) AS n FROM edges').get() as { n: number };
+	return row.n;
+}
+
+export function mostConnectedNodes(limit = 8): (NodeSummary & { degree: number })[] {
+	const rows = db()
+		.query(
+			`SELECT n.slug, n.type, n.name, n.tags_json,
+              ((SELECT COUNT(*) FROM edges WHERE source = n.slug) +
+               (SELECT COUNT(*) FROM edges WHERE target = n.slug)) AS degree
+       FROM nodes n
+       ORDER BY degree DESC, n.name COLLATE NOCASE
+       LIMIT ?`
+		)
+		.all(limit) as Record<string, unknown>[];
+	return rows.map((r) => ({ ...parseSummaryRow(r), degree: r.degree as number }));
+}
+
+function attachDegrees(rows: NodeSummary[]): (NodeSummary & { degree: number })[] {
+	if (rows.length === 0) return [];
+	const placeholders = rows.map(() => '?').join(',');
+	const slugs = rows.map((r) => r.slug);
+	const degRows = db()
+		.query(
+			`SELECT n.slug,
+              ((SELECT COUNT(*) FROM edges WHERE source = n.slug) +
+               (SELECT COUNT(*) FROM edges WHERE target = n.slug)) AS degree
+       FROM nodes n WHERE n.slug IN (${placeholders})`
+		)
+		.all(...slugs) as { slug: string; degree: number }[];
+	const degBySlug = Object.fromEntries(degRows.map((r) => [r.slug, r.degree]));
+	return rows.map((r) => ({ ...r, degree: degBySlug[r.slug] ?? 0 }));
+}
+
+export function listNodesByTypeWithDegree(type: string) {
+	return attachDegrees(listNodesByType(type));
+}
+
+export function listNodesByTagWithDegree(tag: string) {
+	return attachDegrees(listNodesByTag(tag));
+}
+
+export function listNodesByAxisValueWithDegree(axis: string, value: string) {
+	return attachDegrees(listNodesByAxisValue(axis, value));
+}
+
 export function getOutboundEdges(slug: string): EdgeWithPeer[] {
 	const rows = db()
 		.query(
@@ -210,6 +258,16 @@ export function searchText(query: string, limit = 20): SearchHit[] {
 		source: 'text' as const,
 		snippet: r.snippet
 	}));
+}
+
+export function getEdgeLabels(): Map<string, string> {
+	// One row per edge type, mirrored from `ontology.yaml`. `label` is the
+	// human-readable phrase the UI renders in place of the snake_cased type
+	// name. Missing rows (or NULL label) → caller falls back to fmtType().
+	const rows = db()
+		.query('SELECT name, label FROM edge_types WHERE label IS NOT NULL')
+		.all() as { name: string; label: string }[];
+	return new Map(rows.map((r) => [r.name, r.label]));
 }
 
 export function nodesBySlugs(slugs: string[]): Map<string, NodeSummary> {

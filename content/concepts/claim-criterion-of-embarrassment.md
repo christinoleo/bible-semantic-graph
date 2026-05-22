@@ -5,9 +5,12 @@ aliases: [Embarrassment Argument for the Crucifixion, Deuteronomy 21:23 Stumblin
 concerns: [jesus]
 edges:
   - { type: supports, target: jesus-crucifixion-christian-reading, primary: true }
-  - { type: case_of, target: crucifixion-of-jesus }
+  - { type: refuting_case_of, target: crucifixion-of-jesus }
   - { type: refutes, target: claim-q4-157-categorical-crucifixion-denial }
+  - { type: supports, target: islamic-dilemma, note: "historical-critical methodology grants the Gospel crucifixion narrative independent historical force — prior to and independent of the Quran" }
   - { type: invokes, target: criterion-of-embarrassment }
+  - { type: discussed_in, target: no-god-but-one }
+  - { type: discussed_in, target: i-dont-have-enough-faith-to-be-an-atheist }
 argumentation:
   stance: [for-christianity]
   tradition: [christian-apologetic, historical-critical-scholarship]

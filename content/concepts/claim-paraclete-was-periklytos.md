@@ -8,6 +8,7 @@ edges:
   - { type: case_of, target: ahmad-prophecy }
   - { type: presupposes, target: tahrif }
   - { type: cites, target: gospel-of-john, note: "John 14:16-26, 15:26, 16:7-15" }
+  - { type: invokes, target: islamic-dilemma, note: "the restored-text claim still uses John as the carrier of an Islamic prophecy — triggering the dilemma" }
 argumentation:
   stance: [for-islam, against-christianity]
   tradition: [islamic-apologetic]

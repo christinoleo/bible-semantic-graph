@@ -7,6 +7,7 @@ edges:
   - { type: supports, target: ahmad-prophecy-islamic-reading, primary: true }
   - { type: case_of, target: ahmad-prophecy }
   - { type: cites, target: gospel-of-john, note: "John 14:16-26" }
+  - { type: invokes, target: islamic-dilemma, note: "appealing to John 14:16-26 description as reliable triggers the dilemma" }
 argumentation:
   stance: [for-islam, against-christianity]
   tradition: [islamic-apologetic]

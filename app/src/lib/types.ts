@@ -15,11 +15,18 @@ export interface Argumentation {
 export const ARGUMENTATION_AXES = ['stance', 'tradition', 'method', 'subject'] as const;
 export type ArgumentationAxis = (typeof ARGUMENTATION_AXES)[number];
 
+export interface VideoCitation {
+	url: string;
+	title?: string;
+	timestamp?: string;
+}
+
 export interface NodeFull extends NodeSummary {
 	also: string[];
 	aliases: string[];
 	sources: string[];
 	canon: string[];
+	videos: VideoCitation[];
 	argumentation: Argumentation | null;
 	body_html: string;
 }
@@ -35,13 +42,22 @@ export interface EdgeRow {
 
 export interface EdgeWithPeer extends EdgeRow {
 	peer: NodeSummary | null;
+	/** `note` split into plain-text and clickable-ref segments, so the verse
+	 *  reference inside the note becomes the link (no badge duplication).
+	 *  Populated by the page server load when `note` is non-empty. */
+	noteSegments?: NoteSegment[];
 }
+
+export type NoteSegment =
+	| { kind: 'text'; text: string }
+	| { kind: 'ref'; text: string; ref: CitationLink };
 
 /** Edge types that mean "going DEEPER / toward the more fundamental".
  *  Outbound edges of these types render in the "Deeper" section. */
 export const DEEPENING_EDGE_TYPES = new Set([
 	'invokes',
 	'case_of',
+	'refuting_case_of',
 	'presupposes',
 	'instance_of',
 	'builds_on',
@@ -58,9 +74,14 @@ export const CASES_EDGE_TYPES = new Set([
 	'presupposed_by',
 	'has_instance',
 	'extended_by',
-	'generalizes',
-	'supported_by'
+	'generalizes'
 ]);
+
+/** Edges that mean "external arguments providing evidence FOR this Node".
+ *  Inbound `supports` edges materialize as outbound `supported_by` and render
+ *  in their own "Supported by / Arguments in favor" section, so a reader can
+ *  separate (sub-topics / decomposition) from (independent bolstering). */
+export const SUPPORT_EDGE_TYPES = new Set(['supported_by']);
 
 /** Argumentative-opposition edges. Get their own UI section so contradiction
  *  / response chains are salient rather than buried in "Related". */
@@ -69,7 +90,8 @@ export const COUNTER_EDGE_TYPES = new Set([
 	'refuted_by',
 	'responds_to',
 	'has_response',
-	'contradicts'
+	'contradicts',
+	'has_refuting_case'
 ]);
 
 /** Edges that represent the "relata" of a Relational Node — rendered as

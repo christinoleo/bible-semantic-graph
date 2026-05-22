@@ -38,8 +38,8 @@ def collect_files(content_dir: Path) -> list[Path]:
 
 def parse_node(path: Path, content_root: Path) -> tuple[Frontmatter, str]:
     """Read a markdown file, validate frontmatter, return (frontmatter, body_md)."""
-    post = frontmatter.load(path)
     try:
+        post = frontmatter.load(path)
         fm = Frontmatter.model_validate(dict(post.metadata))
     except Exception as e:
         raise IngestError(f"{path.relative_to(content_root)}: invalid frontmatter — {e}") from e
@@ -77,9 +77,9 @@ def write_node(conn: apsw.Connection, record: NodeRecord, updated_at: int) -> No
         """
         INSERT INTO nodes (
           slug, type, also_json, name, aliases_json, tags_json,
-          sources_json, canon_json, argumentation_json,
+          sources_json, canon_json, videos_json, argumentation_json,
           body_md, body_html, file_path, updated_at
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         (
             record.slug,
@@ -90,6 +90,7 @@ def write_node(conn: apsw.Connection, record: NodeRecord, updated_at: int) -> No
             json.dumps(record.tags),
             json.dumps(record.sources),
             json.dumps(record.canon),
+            json.dumps([v.model_dump(exclude_none=True) for v in record.videos]),
             (
                 json.dumps(record.argumentation.model_dump())
                 if record.argumentation
@@ -132,6 +133,16 @@ def write_edges(conn: apsw.Connection, edges: Iterable[EdgeRecord]) -> None:
         )
 
 
+def write_edge_types(conn: apsw.Connection, ontology: Ontology) -> None:
+    """Mirror edge-type display metadata (`label`) from the ontology so the
+    UI can look it up without re-reading the YAML."""
+    for defn in ontology.edge_types.values():
+        conn.execute(
+            "INSERT OR REPLACE INTO edge_types (name, label) VALUES (?, ?)",
+            (defn.name, defn.label),
+        )
+
+
 def materialize_edges(
     declared_edges: list[EdgeRecord],
     wikilink_mentions: dict[str, list[str]],
@@ -151,13 +162,23 @@ def materialize_edges(
             out.append(
                 EdgeRecord(source=source_slug, type="concerns", target=t, origin="frontmatter")
             )
-    # Reciprocity
+    # Reciprocity. Skip inferring if the reciprocal is already declared —
+    # otherwise symmetric edges declared on both sides duplicate (one
+    # frontmatter row plus one inferred row of the same (source, type, target)).
+    existing: set[tuple[str, str, str]] = {(e.source, e.type, e.target) for e in out}
     inferred: list[EdgeRecord] = []
     for e in out:
         inv = ontology.inverse_of(e.type)
         if inv is None:
             continue
+        # Register the inverse so it shows up in the edge_types table — without
+        # this, edge types that only ever appear as auto-materialized inverses
+        # (e.g., refuted_by when only `refutes` is declared) would never be
+        # registered, and the UI would have to fall back to fmtType().
+        ontology.see_edge_type(inv)
         if inv == e.type and e.source == e.target:
+            continue
+        if (e.target, inv, e.source) in existing:
             continue
         inferred.append(
             EdgeRecord(source=e.target, type=inv, target=e.source, note=e.note, origin="inferred")
@@ -271,6 +292,7 @@ def ingest_all(
             tags=fm.tags,
             sources=fm.sources,
             canon=fm.canon,
+            videos=fm.videos,
             argumentation=fm.argumentation,
             body_md=body,
             body_html=html,
@@ -339,6 +361,7 @@ def ingest_all(
         for rec in records:
             write_node(conn, rec, now)
         write_edges(conn, all_edges)
+        write_edge_types(conn, ontology)
         conn.execute("INSERT OR REPLACE INTO meta (key, value) VALUES (?, ?)",
                      ("last_ingest_at", str(now)))
         conn.execute("INSERT OR REPLACE INTO meta (key, value) VALUES (?, ?)",
@@ -348,6 +371,10 @@ def ingest_all(
         console.print(f"[dim]Encoding {len(records)} nodes…[/dim]")
         embeddings = embed_nodes(records)
         with conn:
+            # Wipe and refill in the same transaction — DELETE+INSERTs must be
+            # atomic, otherwise leftover rows from the previous ingest trip the
+            # slug PRIMARY KEY.
+            conn.execute("DELETE FROM nodes_vec")
             write_vectors(conn, embeddings)
 
     ontology.save_if_dirty()

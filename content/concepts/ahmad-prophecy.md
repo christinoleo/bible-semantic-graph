@@ -6,6 +6,8 @@ edges:
   - { type: cites, target: quran, note: "Q 61:6 — Jesus's prophecy of 'Aḥmad'" }
   - { type: cites, target: gospel-of-john, note: "John 14:16-26, 15:26, 16:7-15 — Paraclete passages" }
   - { type: discussed_in, target: jesus-was-a-muslim-prophet }
+  - { type: discussed_in, target: seeking-allah-finding-jesus }
+  - { type: discussed_in, target: no-god-but-one }
 tags: [christology, prophet-succession, paraclete, comparative-religion]
 sources: ["John 14:16-26", "John 15:26", "John 16:7-15"]
 ---

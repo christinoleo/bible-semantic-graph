@@ -1,7 +1,7 @@
 ---
 type: Person
 name: Jesus of Nazareth
-aliases: [Jesus, Yēšūaʿ, Ἰησοῦς, יֵשׁוּעַ, Christ, Messiah, Jesus Christ]
+aliases: [Jesus, Yēšūaʿ, Ἰησοῦς, יֵשׁוּעַ]
 edges:
   - { type: son_of, target: mary-mother-of-jesus }
   - { type: son_of, target: joseph-of-nazareth }

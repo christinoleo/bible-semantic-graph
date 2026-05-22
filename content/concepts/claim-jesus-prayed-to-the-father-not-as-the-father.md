@@ -10,6 +10,7 @@ edges:
   - { type: cites, target: gospel-of-mark, note: "Mark 14:36 — Abba, Father" }
   - { type: cites, target: gospel-of-john, note: "John 17 — high-priestly prayer" }
   - { type: invokes, target: tawhid }
+  - { type: invokes, target: islamic-dilemma, note: "citing the Gospels' prayer scenes as reliable triggers the dilemma" }
 argumentation:
   stance: [for-islam, against-christianity]
   tradition: [islamic-apologetic]

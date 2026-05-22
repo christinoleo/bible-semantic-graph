@@ -5,7 +5,6 @@ aliases: [Pre-Existence Argument]
 concerns: [jesus]
 edges:
   - { type: supports, target: jesus-prostration-christian-reading, primary: true }
-  - { type: invokes, target: trinity }
   - { type: supports, target: trinity }
   - { type: cites, target: gospel-of-john }
   - { type: invokes, target: chalcedonian-christology }

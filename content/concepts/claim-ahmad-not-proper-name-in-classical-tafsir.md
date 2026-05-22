@@ -6,7 +6,7 @@ concerns: []
 edges:
   - { type: supports, target: ahmad-prophecy-christian-reading, primary: true }
   - { type: refutes, target: claim-ahmad-muhammad-share-h-m-d-root }
-  - { type: case_of, target: ahmad-prophecy }
+  - { type: refuting_case_of, target: ahmad-prophecy }
   - { type: cites, target: quran, note: "Q 61:6" }
 argumentation:
   stance: [for-christianity, internal-islamic-disagreement]

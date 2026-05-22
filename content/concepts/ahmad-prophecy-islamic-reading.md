@@ -10,6 +10,7 @@ edges:
   - { type: cites, target: gospel-of-john, note: "John 14:16-26, 15:26, 16:7-15 — Paraclete reread" }
   - { type: presupposes, target: tahrif }
   - { type: contradicts, target: ahmad-prophecy-christian-reading }
+  - { type: invokes, target: islamic-dilemma, note: "claiming John 14-16 once foretold Muhammad still relies on John as a divinely-protected carrier — triggering the dilemma" }
 argumentation:
   stance: [against-christianity, for-islam]
   tradition: [islamic-apologetic]

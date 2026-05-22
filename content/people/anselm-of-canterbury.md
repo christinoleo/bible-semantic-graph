@@ -3,6 +3,7 @@ type: Person
 name: Anselm of Canterbury
 aliases: [Anselmus Cantuariensis, Anselm of Aosta, Anselm of Bec, Doctor Magnificus]
 edges:
+  - { type: practitioner_of, target: scholastic }
   - { type: authored, target: proslogion }
   - { type: authored, target: monologion }
   - { type: authored, target: cur-deus-homo }

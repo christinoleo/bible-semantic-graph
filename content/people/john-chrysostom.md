@@ -3,6 +3,7 @@ type: Person
 name: John Chrysostom
 aliases: [Iōánnēs ho Chrysóstomos, Ἰωάννης ὁ Χρυσόστομος, John of Antioch, "the Golden-mouthed"]
 edges:
+  - { type: practitioner_of, target: patristic }
   - { type: authored, target: homilies-on-matthew }
   - { type: authored, target: homilies-on-john }
   - { type: authored, target: homilies-on-romans }

@@ -72,6 +72,28 @@ header .bar {
 	border-color: var(--accent);
 }
 
+.repo {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 6px;
+	color: var(--fg-muted);
+	flex-shrink: 0;
+	transition: color 140ms ease, background 140ms ease;
+}
+
+.repo:hover {
+	color: var(--fg);
+	background: var(--bg);
+	text-decoration: none;
+}
+
+.repo svg {
+	display: block;
+}
+
 main {
 	max-width: 980px;
 	margin: 0 auto;
@@ -142,6 +164,16 @@ a.wikilink {
 	border-radius: 4px;
 	vertical-align: middle;
 }
+
+.type-pill[data-type='Person']       { background: #e9eefc; color: #2c4ea3; }
+.type-pill[data-type='Place']        { background: #eef5e1; color: #4a6f17; }
+.type-pill[data-type='Text']         { background: #fcf5e0; color: #8a6a1d; }
+.type-pill[data-type='Manuscript']   { background: #f3e9fc; color: #6b2ca3; }
+.type-pill[data-type='Argument']     { background: #fce9e6; color: #a3372c; }
+.type-pill[data-type='Event']        { background: #e1eef5; color: #1d6a8a; }
+.type-pill[data-type='Council']      { background: #fce5f3; color: #8a1d6a; }
+.type-pill[data-type='Deity']        { background: #faf0d4; color: #a8842c; }
+.type-pill[data-type='Mythological'] { background: #ece9e2; color: #5b554a; }
 
 .tag {
 	display: inline-block;

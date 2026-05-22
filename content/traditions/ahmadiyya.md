@@ -5,6 +5,8 @@ aliases: [Ahmadiyya Muslim Community, Qadiani movement, Ahmadi Islam]
 edges:
   - { type: builds_on, target: islamic-apologetic }
   - { type: contradicts, target: sunni-islam }
+  - { type: has_practitioner, target: mirza-ghulam-ahmad }
+  - { type: discussed_in, target: seeking-allah-finding-jesus }
 tags: [tradition, ahmadiyya, islamic-reform, messianic]
 sources: []
 ---

@@ -3,6 +3,7 @@ type: Concept
 name: Crucifixion of Jesus
 aliases: [Crucifixion, Death of Jesus on the Cross, Passion of Christ]
 edges:
+  - { type: case_of, target: christian-apologetics-corpus, primary: true }
   - { type: discussed_in, target: gospel-of-matthew }
   - { type: discussed_in, target: gospel-of-mark }
   - { type: discussed_in, target: gospel-of-luke }

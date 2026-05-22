@@ -3,6 +3,7 @@ type: Person
 name: Irenaeus of Lyons
 aliases: [Irenaeus, Eirēnaios, Εἰρηναῖος, Irenaeus Lugdunensis]
 edges:
+  - { type: practitioner_of, target: patristic }
   - { type: authored, target: against-heresies }
   - { type: authored, target: demonstration-of-the-apostolic-preaching }
   - { type: disciple_of, target: polycarp }

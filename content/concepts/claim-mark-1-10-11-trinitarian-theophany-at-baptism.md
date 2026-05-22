@@ -4,8 +4,7 @@ name: Mark 1:10-11 — Trinitarian Theophany at Jesus's Baptism
 aliases: [Markan Jordan Theophany, Baptism Theophany (Mark)]
 concerns: [jesus]
 edges:
-  - { type: invokes, target: trinity, primary: true }
-  - { type: supports, target: trinity }
+  - { type: supports, target: trinity, primary: true }
   - { type: cites, target: gospel-of-mark }
   - { type: parallels_with, target: claim-matt-3-16-17-trinitarian-theophany-at-baptism }
   - { type: refutes, target: claim-high-christology-in-earliest-strata, note: "Mark, the earliest Gospel, already presents the triadic disclosure" }

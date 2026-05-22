@@ -5,7 +5,7 @@ aliases: [Recognition Problem for Substitutionism]
 concerns: [jesus]
 edges:
   - { type: supports, target: jesus-crucifixion-christian-reading, primary: true }
-  - { type: case_of, target: crucifixion-of-jesus }
+  - { type: refuting_case_of, target: crucifixion-of-jesus }
   - { type: refutes, target: claim-substitution-theory-judas }
   - { type: refutes, target: claim-substitution-theory-simon-of-cyrene }
   - { type: cites, target: gospel-of-luke, note: "Luke 24 — Emmaus recognition" }

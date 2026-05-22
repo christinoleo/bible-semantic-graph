@@ -8,6 +8,7 @@ edges:
   - { type: supports, target: jesus-prostration-islamic-reading }
   - { type: cites, target: gospel-of-mark }
   - { type: invokes, target: tawhid }
+  - { type: invokes, target: islamic-dilemma, note: "appealing to Mark 10:18 as reliable triggers the dilemma" }
 argumentation:
   stance: [for-islam, against-christianity]
   tradition: [islamic-apologetic]

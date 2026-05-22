@@ -8,6 +8,14 @@ edges:
   - { type: has_case, target: jesus-crucifixion-christian-reading }
   - { type: has_case, target: ahmad-prophecy-christian-reading }
   - { type: has_case, target: jesus-prostration-christian-reading }
+  - { type: has_case, target: audience-adapted-apologetics }
+  - { type: has_case, target: claim-truly-god-not-fully-god-avoids-partialism-trap }
+  - { type: has_case, target: claim-muhammad-confirms-jesus-so-cannot-contradict-him }
+  - { type: has_case, target: claim-hafs-trust-inconsistency-undercuts-gospel-author-rejection }
+  - { type: has_case, target: claim-q19-93-closes-honorific-son-reading }
+  - { type: has_case, target: claim-quran-calls-torah-al-furqan-refutes-tahrif }
+  - { type: has_case, target: claim-quran-as-muhaymin-guards-prior-scripture }
+  - { type: has_case, target: claim-genesis-rest-not-weariness-no-correction-needed }
   - { type: case_of, target: inter-religious-polemic }
 tags: [theory, christian-apologetics, comparative-religion, polemic]
 sources: []

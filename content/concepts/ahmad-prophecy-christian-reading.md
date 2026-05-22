@@ -4,7 +4,7 @@ name: Christian Reading of the Ahmad Prophecy (Paraclete as Holy Spirit)
 aliases: [Holy-Spirit Paraclete Reading, Pneumatological Reading of John 14-16]
 concerns: [jesus]
 edges:
-  - { type: case_of, target: ahmad-prophecy, primary: true }
+  - { type: refuting_case_of, target: ahmad-prophecy, primary: true }
   - { type: responds_to, target: ahmad-prophecy-islamic-reading, primary: true }
   - { type: refutes, target: ahmad-prophecy-islamic-reading }
   - { type: cites, target: gospel-of-john, note: "John 14:16-26, 15:26, 16:7-15" }

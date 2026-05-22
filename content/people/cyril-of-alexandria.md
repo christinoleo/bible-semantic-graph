@@ -3,6 +3,7 @@ type: Person
 name: Cyril of Alexandria
 aliases: [Kyrillos Alexandreias, Κύριλλος Ἀλεξανδρείας, Cyrillus Alexandrinus]
 edges:
+  - { type: practitioner_of, target: patristic }
   - { type: authored, target: on-the-unity-of-christ }
   - { type: authored, target: against-nestorius }
   - { type: authored, target: commentary-on-john }

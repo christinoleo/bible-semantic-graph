@@ -3,6 +3,7 @@ type: Person
 name: Gregory the Great
 aliases: [Gregorius Magnus, Pope Gregory I, Saint Gregory the Dialogist]
 edges:
+  - { type: practitioner_of, target: patristic }
   - { type: authored, target: pastoral-rule }
   - { type: authored, target: moralia-on-job }
   - { type: authored, target: dialogues }

@@ -8,6 +8,7 @@ edges:
   - { type: supports, target: jesus-prostration-islamic-reading }
   - { type: cites, target: gospel-of-john }
   - { type: invokes, target: tawhid }
+  - { type: invokes, target: islamic-dilemma, note: "appealing to John 17:3 as reliable triggers the dilemma" }
 argumentation:
   stance: [for-islam, against-christianity]
   tradition: [islamic-apologetic]

@@ -10,6 +10,12 @@ edges:
   - { type: has_case, target: ahmad-prophecy-islamic-reading }
   - { type: has_case, target: jesus-prostration-islamic-reading }
   - { type: has_case, target: islamic-christology }
+  - { type: has_case, target: claim-fully-god-language-invites-partialism-charge }
+  - { type: has_case, target: claim-original-sin-language-invites-predestination-charge }
+  - { type: has_case, target: claim-each-prophet-own-sharia-justifies-quran-contradicting-gospel }
+  - { type: has_case, target: claim-jesus-as-honorific-son-not-begotten }
+  - { type: has_case, target: claim-quran-as-newest-version-supersedes-prior-scripture }
+  - { type: has_case, target: claim-q50-38-no-weariness-corrects-genesis-rest }
   - { type: case_of, target: inter-religious-polemic }
 tags: [theory, islamic-apologetics, comparative-religion, polemic]
 sources: []

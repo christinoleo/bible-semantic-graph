@@ -46,223 +46,380 @@ node_types:
 edge_types:
 - name: father_of
   inverse: son_of
+  label: father of
   status: canonical
 - name: mother_of
   inverse: son_of
+  label: mother of
   status: canonical
 - name: son_of
   inverse: father_of
+  label: son of
   status: canonical
 - name: daughter_of
   inverse: father_of
+  label: daughter of
   status: canonical
 - name: spouse_of
   symmetric: true
+  label: spouse of
   status: canonical
 - name: sibling_of
   symmetric: true
+  label: sibling of
   status: canonical
 - name: descendant_of
   inverse: ancestor_of
+  label: descendant of
   status: canonical
 - name: ancestor_of
   inverse: descendant_of
+  label: ancestor of
   status: canonical
 - name: lived_in
   inverse: home_of
+  label: lived in
   status: canonical
 - name: born_in
   inverse: birthplace_of
+  label: was born in
   status: canonical
 - name: died_in
   inverse: deathplace_of
+  label: died in
   status: canonical
 - name: travelled_to
   inverse: visited_by
+  label: travelled to
   status: canonical
 - name: located_in
   inverse: contains
+  label: located in
   status: canonical
 - name: occurs_at
   inverse: site_of
+  label: occurs at
   status: canonical
 - name: participates_in
   inverse: involves
+  label: participates in
   status: canonical
 - name: precedes
   inverse: follows
+  label: precedes
   status: canonical
 - name: appears_in
   inverse: features
+  label: appears in
   status: canonical
 - name: discussed_in
   inverse: discusses
+  label: is discussed in
   status: canonical
 - name: cites
   inverse: cited_by
+  label: cites
   status: canonical
 - name: fulfills
   inverse: fulfilled_by
+  label: fulfills
   status: canonical
 - name: prefigures
   inverse: prefigured_by
+  label: prefigures
   status: canonical
 - name: parallels_with
   symmetric: true
+  label: parallels
   status: canonical
 - name: contradicts
   symmetric: true
+  label: contradicts
   status: canonical
 - name: builds_on
   inverse: extended_by
+  label: builds on
   status: canonical
 - name: refutes
   inverse: refuted_by
+  label: refutes
+  status: canonical
+- name: refuted_by
+  inverse: refutes
+  label: is refuted by
   status: canonical
 - name: instance_of
   inverse: has_instance
+  label: is an instance of
   status: canonical
 - name: related_to
   symmetric: true
+  label: related to
   status: canonical
 - name: invokes
   inverse: invoked_by
+  label: invokes
   status: canonical
   description: A invokes B — B is a deeper question/principle A engages
 - name: invoked_by
   inverse: invokes
+  label: is invoked by
   status: canonical
 - name: case_of
   inverse: has_case
+  label: is a case of
   status: canonical
   description: A case_of B — A is a specific instance of the more general B
 - name: has_case
   inverse: case_of
+  label: has as a specific case
+  status: canonical
+- name: refuting_case_of
+  inverse: has_refuting_case
+  label: is a refuting case of
+  status: canonical
+  description: 'A refuting_case_of B — A is a case under the umbrella B that argues
+    *against* the partisan claim B hosts (typically a Christian Argument refuting
+    an Islamic-apologetic reading). Renders on B''s page in the Counter-arguments
+    section rather than Specific cases, so pro/contra readings split visually.
+
+    '
+- name: has_refuting_case
+  inverse: refuting_case_of
+  label: has as a refuting case
   status: canonical
 - name: presupposes
   inverse: presupposed_by
+  label: presupposes
   status: canonical
   description: A presupposes B — B is taken for granted by A
 - name: presupposed_by
   inverse: presupposes
+  label: is presupposed by
   status: canonical
 - name: specializes
   inverse: generalizes
+  label: specializes
   status: canonical
   description: A specializes B — A is a narrower version of B
 - name: generalizes
   inverse: specializes
+  label: generalizes
   status: canonical
 - name: concerns
   inverse: concern_of
+  label: concerns
   status: canonical
   description: Relational Node → entity it is "about" or "between". Materialized from
     the frontmatter `concerns:` field.
 - name: concern_of
   inverse: concerns
+  label: is the concern of
   status: canonical
 - name: supports
   inverse: supported_by
+  label: supports
   status: canonical
   description: A supports B — A provides evidence/sub-argument for B's claim. A is
     the sub-claim, B is the larger argumentative position.
 - name: supported_by
   inverse: supports
+  label: is supported by
   status: canonical
 - name: responds_to
   inverse: has_response
+  label: responds to
   status: canonical
   description: A responds_to B — A is a measured response to B, weaker than `refutes`.
     Use when "here's an answer" rather than "this disproves it."
 - name: has_response
   inverse: responds_to
+  label: is responded to by
   status: canonical
 - name: mentions
   inverse: mentioned_in
+  label: mentions
   status: canonical
   description: Implicit edge from [[wiki-links]] in body text
 - name: features
   inverse: appears_in
+  label: features
   status: canonical
 - name: follows
   inverse: precedes
+  label: follows
   status: canonical
 - name: cited_by
   inverse: cites
+  label: is cited by
   status: canonical
 - name: wrote
   inverse: written_by
+  label: wrote
   status: canonical
   description: Person → Text/Document they composed
 - name: written_by
   inverse: wrote
+  label: was written by
   status: canonical
 - name: prophet_to
   inverse: prophesied_to_by
+  label: prophesied to
+  status: canonical
+- name: prophesied_to_by
+  inverse: prophet_to
+  label: was prophesied to by
   status: canonical
 - name: disciple_of
   inverse: had_disciple
+  label: disciple of
+  status: canonical
+- name: had_disciple
+  inverse: disciple_of
+  label: had as disciple
   status: canonical
 - name: practitioner_of
   inverse: has_practitioner
+  label: practitioner of
   status: canonical
   description: Person → Tradition they advanced / argued within
 - name: has_practitioner
   inverse: practitioner_of
+  label: has as practitioner
   status: canonical
 - name: prefigured_by
   inverse: prefigures
+  label: is prefigured by
   status: canonical
 - name: addressed_in
   inverse: addresses
+  label: is addressed in
+  status: canonical
+- name: addresses
+  inverse: addressed_in
+  label: addresses
   status: canonical
 - name: witnesses_to
   inverse: witnessed_by
+  label: witnesses to
   status: canonical
   description: Manuscript → Text it preserves
+- name: witnessed_by
+  inverse: witnesses_to
+  label: is witnessed by
+  status: canonical
 - name: preserves
   inverse: preserved_by
+  label: preserves
   status: canonical
   description: Manuscript → Passage or textual variant
+- name: preserved_by
+  inverse: preserves
+  label: is preserved by
+  status: canonical
 - name: copy_of
   inverse: copied_into
+  label: copy of
   status: canonical
   description: Manuscript stemmatics
+- name: copied_into
+  inverse: copy_of
+  label: was copied into
+  status: canonical
 - name: authored
   inverse: authored_by
+  label: authored
   status: canonical
   description: Person → Text/Document composed (saints' writings, council canons)
 - name: attended
   inverse: attended_by
+  label: attended
   status: canonical
 - name: presided_over
   inverse: presided_by
+  label: presided over
   status: canonical
 - name: condemned
   inverse: condemned_by
+  label: condemned
   status: canonical
   description: Council/Person → Heresy/Person/Doctrine condemned
 - name: canonized
   inverse: canonized_by
+  label: canonized
   status: canonical
 - name: defined_doctrine
   inverse: doctrine_defined_by
+  label: defined doctrine
   status: canonical
 - name: presided_by
+  label: was presided by
   status: seen
 - name: attended_by
+  label: was attended by
   status: seen
 - name: condemned_by
+  label: was condemned by
   status: seen
 - name: tribe_of
+  label: tribe of
   status: seen
 - name: attributed_to
+  label: attributed to
   status: seen
 - name: codified_at
+  label: was codified at
   status: seen
 - name: extended_by
+  label: is extended by
   status: seen
 - name: authored_by
+  label: was authored by
+  status: seen
+- name: home_of
+  label: is home of
+  status: seen
+- name: birthplace_of
+  label: is birthplace of
+  status: seen
+- name: deathplace_of
+  label: is deathplace of
+  status: seen
+- name: visited_by
+  label: was visited by
+  status: seen
+- name: contains
+  label: contains
+  status: seen
+- name: site_of
+  label: is site of
+  status: seen
+- name: involves
+  label: involves
+  status: seen
+- name: discusses
+  label: discusses
+  status: seen
+- name: fulfilled_by
+  label: is fulfilled by
+  status: seen
+- name: has_instance
+  label: has instance
+  status: seen
+- name: mentioned_in
+  label: is mentioned in
+  status: seen
+- name: canonized_by
+  label: was canonized by
+  status: seen
+- name: doctrine_defined_by
+  label: doctrine defined by
+  status: seen
+- name: founded
+  status: seen
+- name: adherent_of
+  status: seen
+- name: married_to
   status: seen
 source_readers:
   default: bible_gateway
@@ -299,6 +456,12 @@ argumentation_axes:
     status: canonical
   - name: inter-religious-polemic
     status: canonical
+  - name: for-religion
+    status: seen
+  - name: for-religion
+    status: seen
+  - name: historical-critical-scholarship
+    status: seen
   tradition:
   - name: islamic-apologetic
     status: canonical
@@ -334,6 +497,14 @@ argumentation_axes:
     status: seen
   - name: ahmadiyya
     status: seen
+  - name: internal-christian-disagreement
+    status: seen
+  - name: orthodox-eastern
+    status: seen
+  - name: classical-apologetic
+    status: seen
+  - name: classical-apologetic
+    status: seen
   method:
   - name: textual-critique
     status: canonical
@@ -361,6 +532,10 @@ argumentation_axes:
     status: canonical
   - name: typological
     status: canonical
+  - name: from-theology
+    status: seen
+  - name: from-science
+    status: seen
   subject:
   - name: christology
     status: canonical
@@ -402,3 +577,15 @@ argumentation_axes:
     status: canonical
   - name: revelation
     status: canonical
+  - name: theology-proper
+    status: seen
+  - name: theology-proper
+    status: seen
+  - name: messianism
+    status: seen
+  - name: metaphysics
+    status: seen
+  - name: cosmology
+    status: seen
+  - name: epistemology
+    status: seen

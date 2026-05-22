@@ -3,6 +3,7 @@ type: Person
 name: Tertullian
 aliases: [Quintus Septimius Florens Tertullianus, Tertullianus]
 edges:
+  - { type: practitioner_of, target: patristic }
   - { type: authored, target: apologeticum }
   - { type: authored, target: against-praxeas }
   - { type: authored, target: against-marcion }

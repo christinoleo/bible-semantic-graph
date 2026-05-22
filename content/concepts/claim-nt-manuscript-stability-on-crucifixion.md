@@ -5,12 +5,14 @@ aliases: [No Manuscript Evidence for Tahrif of the Crucifixion]
 concerns: [jesus]
 edges:
   - { type: supports, target: jesus-crucifixion-christian-reading, primary: true }
-  - { type: case_of, target: crucifixion-of-jesus }
+  - { type: refuting_case_of, target: crucifixion-of-jesus }
   - { type: refutes, target: claim-tahrif-explains-christian-crucifixion-witness }
+  - { type: supports, target: islamic-dilemma, note: "crucifixion text is stable across pre-Muhammad manuscripts — direct empirical evidence for the second horn" }
   - { type: cites, target: p52 }
   - { type: cites, target: p46 }
   - { type: cites, target: codex-vaticanus }
   - { type: cites, target: codex-sinaiticus }
+  - { type: discussed_in, target: huff-christological-claims-johns-gospel }
 argumentation:
   stance: [for-christianity]
   tradition: [christian-apologetic, historical-critical-scholarship]

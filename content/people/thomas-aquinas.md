@@ -3,6 +3,7 @@ type: Person
 name: Thomas Aquinas
 aliases: [Thomas of Aquino, Tommaso d'Aquino, Doctor Angelicus, Doctor Communis, Thomas Aquinas O.P.]
 edges:
+  - { type: practitioner_of, target: scholastic }
   - { type: authored, target: summa-theologiae }
   - { type: authored, target: summa-contra-gentiles }
   - { type: authored, target: commentary-on-the-sentences }

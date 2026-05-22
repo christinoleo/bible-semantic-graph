@@ -1,8 +1,9 @@
 ---
 type: Person
 name: Augustine of Hippo
-aliases: [Aurelius Augustinus, Augustinus, Saint Augustine, Doctor Gratiae]
+aliases: [Augustine, Aurelius Augustinus, Augustinus, Saint Augustine, St. Augustine, Doctor Gratiae]
 edges:
+  - { type: practitioner_of, target: patristic }
   - { type: authored, target: confessions }
   - { type: authored, target: city-of-god }
   - { type: authored, target: on-the-trinity }

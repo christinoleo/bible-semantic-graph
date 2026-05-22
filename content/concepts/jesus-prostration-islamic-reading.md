@@ -10,6 +10,7 @@ edges:
   - { type: cites, target: gospel-of-mark, note: "Mark 14:35" }
   - { type: invokes, target: tawhid }
   - { type: contradicts, target: jesus-prostration-christian-reading }
+  - { type: invokes, target: islamic-dilemma, note: "the whole reading depends on Matt 26:39 / Mark 14:35 being reliable — which triggers the dilemma" }
 argumentation:
   stance: [against-christianity, for-islam]
   tradition: [islamic-apologetic]

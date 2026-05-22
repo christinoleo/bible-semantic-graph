@@ -3,6 +3,7 @@ type: Person
 name: Leo I the Great
 aliases: [Leo Magnus, Pope Leo I, Saint Leo, Leo I Romanus]
 edges:
+  - { type: practitioner_of, target: patristic }
   - { type: authored, target: tome-of-leo }
   - { type: authored, target: sermons-of-leo }
   - { type: authored, target: letters-of-leo }

@@ -1,9 +1,12 @@
 ---
 aliases:
+- Mary
 - Maryam
 - Μαρία
-- Theotokos
 - Virgin Mary
+- Maryam bint Imran
+- The Virgin Mary
+- مَرْيَم
 - Madonna
 edges:
 - target: jesus

@@ -7,6 +7,8 @@ edges:
   - { type: supports, target: jesus-crucifixion-islamic-reading, primary: true }
   - { type: case_of, target: crucifixion-of-jesus }
   - { type: cites, target: quran, note: "Q 4:157" }
+  - { type: discussed_in, target: seeking-allah-finding-jesus }
+  - { type: discussed_in, target: no-god-but-one }
 argumentation:
   stance: [for-islam, against-christianity]
   tradition: [islamic-apologetic]

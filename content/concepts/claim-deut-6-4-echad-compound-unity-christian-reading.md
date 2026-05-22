@@ -4,11 +4,11 @@ name: Deuteronomy 6:4 — Echad as Compound Unity (Christian Reading)
 aliases: [Shema Trinitarian Reading, Echad Compound-Unity Argument]
 concerns: [shema-deut-6-4]
 edges:
-  - { type: case_of, target: shema-deut-6-4, primary: true }
-  - { type: invokes, target: trinity }
+  - { type: refuting_case_of, target: shema-deut-6-4, primary: true }
+  - { type: responds_to, target: claim-shema-disproves-trinity-jewish-reading, primary: true, note: "engages the unitarian reading via Gen 2:24 / Num 13:23 compound-unity counter-examples" }
   - { type: supports, target: trinity }
   - { type: cites, target: deuteronomy }
-  - { type: contradicts, target: claim-shema-disproves-trinity-jewish-reading, note: "forward ref — the unitarian counter-reading" }
+  - { type: contradicts, target: claim-shema-disproves-trinity-jewish-reading }
 argumentation:
   stance: [for-christianity, against-judaism]
   tradition: [christian-apologetic, patristic]

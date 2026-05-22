@@ -6,7 +6,8 @@ concerns: []
 edges:
   - { type: supports, target: ahmad-prophecy-christian-reading, primary: true }
   - { type: refutes, target: claim-tahrif-corruption-of-nt }
-  - { type: case_of, target: tahrif }
+  - { type: refuting_case_of, target: tahrif }
+  - { type: supports, target: islamic-dilemma, note: "manuscript record is the empirical engine behind the dilemma's second horn" }
   - { type: cites, target: p52 }
   - { type: cites, target: p46 }
   - { type: cites, target: codex-vaticanus }

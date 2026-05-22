@@ -4,8 +4,7 @@ name: Jeremiah 23:5-6 — The Messianic Branch Called YHWH Tsidkenu
 aliases: [Jehovah Tsidkenu Argument, Branch of David YHWH Name]
 concerns: [jesus]
 edges:
-  - { type: invokes, target: trinity, primary: true }
-  - { type: supports, target: trinity }
+  - { type: supports, target: trinity, primary: true }
   - { type: cites, target: jeremiah }
   - { type: parallels_with, target: claim-isa-9-6-mighty-god-everlasting-father, note: "forward ref — Isaiah's parallel naming of the messianic child" }
 argumentation:

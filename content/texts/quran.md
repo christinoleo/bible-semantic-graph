@@ -1,7 +1,7 @@
 ---
 type: Text
 name: Quran
-aliases: [Qur'an, Koran, Al-Qur'ān, القرآن, Kitāb Allāh, al-Furqān, al-Dhikr, The Recitation]
+aliases: [Qur'an, Koran, Al-Qur'ān, القرآن, Kitāb Allāh, al-Dhikr, The Recitation]
 canon: [islamic]
 edges:
   - { type: features, target: muhammad }
@@ -13,6 +13,8 @@ edges:
   - { type: features, target: noah, note: "Nuh — Q 71 is named for him" }
   - { type: parallels_with, target: bible, note: "shared prophet narratives, sharply divergent christology and theology of revelation" }
   - { type: contradicts, target: bible, note: "Q 4:157 denial of the crucifixion; Q 5:72-73 denial of divinity and trinity" }
+  - { type: discusses, target: injil, note: "Q 3:3-4, Q 5:46-47, Q 5:68, Q 5:110, Q 7:157, Q 9:111, Q 48:29, Q 57:27 — affirms the Injil as authoritative, to be consulted by its contemporary audience" }
+  - { type: refuted_by, target: islamic-dilemma, note: "the Quran's affirmation of contemporaneously-available Torah and Injil is the engine of the dilemma" }
 tags: [islam, quran, scripture, revelation]
 sources: ["Q 2:75", "Q 3:78", "Q 4:46", "Q 4:157", "Q 5:13", "Q 5:41", "Q 5:72-73", "Q 5:75", "Q 19:30-33", "Q 61:6"]
 ---

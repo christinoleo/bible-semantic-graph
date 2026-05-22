@@ -3,6 +3,7 @@ type: Person
 name: Origen of Alexandria
 aliases: [Origenes Adamantius, Ōrigénēs, Ὠριγένης]
 edges:
+  - { type: practitioner_of, target: patristic }
   - { type: authored, target: on-first-principles }
   - { type: authored, target: contra-celsum }
   - { type: authored, target: hexapla }

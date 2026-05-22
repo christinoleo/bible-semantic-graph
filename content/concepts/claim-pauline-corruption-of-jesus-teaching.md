@@ -7,6 +7,9 @@ edges:
   - { type: supports, target: jesus-was-a-muslim-prophet, primary: true }
   - { type: case_of, target: tahrif }
   - { type: refutes, target: pauline-christology }
+  - { type: refuted_by, target: claim-hafs-trust-inconsistency-undercuts-gospel-author-rejection }
+  - { type: refuted_by, target: claim-corruption-charge-presupposes-uncorrupted-baseline }
+  - { type: parallels_with, target: claim-muhammad-confirms-jesus-so-cannot-contradict-him, note: "symmetrical: if Paul is bound by claiming to follow Jesus, Muhammad is bound by claiming to confirm him" }
 argumentation:
   stance: [for-islam, against-christianity]
   tradition: [islamic-apologetic]

@@ -6,7 +6,7 @@ concerns: []
 edges:
   - { type: supports, target: ahmad-prophecy-christian-reading, primary: true }
   - { type: refutes, target: claim-paraclete-was-periklytos }
-  - { type: case_of, target: ahmad-prophecy }
+  - { type: refuting_case_of, target: ahmad-prophecy }
 argumentation:
   stance: [for-christianity]
   tradition: [christian-apologetic, historical-critical-scholarship]

@@ -5,7 +5,6 @@ aliases: [Hen-Esmen Saying]
 concerns: [jesus]
 edges:
   - { type: supports, target: jesus-prostration-christian-reading, primary: true }
-  - { type: invokes, target: trinity }
   - { type: supports, target: trinity }
   - { type: refutes, target: claim-jesus-said-father-greater-than-i }
   - { type: cites, target: gospel-of-john }

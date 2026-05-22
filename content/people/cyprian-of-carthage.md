@@ -3,6 +3,7 @@ type: Person
 name: Cyprian of Carthage
 aliases: [Thascius Caecilius Cyprianus, Cyprianus]
 edges:
+  - { type: practitioner_of, target: patristic }
   - { type: authored, target: on-the-unity-of-the-church }
   - { type: authored, target: epistles-of-cyprian }
   - { type: authored, target: on-the-lapsed }

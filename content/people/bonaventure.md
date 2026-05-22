@@ -3,6 +3,7 @@ type: Person
 name: Bonaventure
 aliases: [Bonaventura da Bagnoregio, Giovanni di Fidanza, Doctor Seraphicus, Saint Bonaventure]
 edges:
+  - { type: practitioner_of, target: scholastic }
   - { type: authored, target: itinerarium-mentis-in-deum }
   - { type: authored, target: breviloquium }
   - { type: authored, target: legenda-maior }

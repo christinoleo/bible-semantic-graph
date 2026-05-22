@@ -21,8 +21,11 @@ def main() -> None:
     # Initial ingest
     try:
         ingest_all()
-    except IngestError as e:
-        console.print(f"[red]✗ initial ingest failed:[/red] {e}")
+    except Exception as e:
+        # Broad catch: this loop must survive mid-save transients
+        # (malformed YAML in content/ or ontology.yaml). Real bugs still
+        # surface via the printed message.
+        console.print(f"[red]✗ initial ingest failed:[/red] {type(e).__name__}: {e}")
 
     for changes in watch(paths.CONTENT_DIR, paths.ONTOLOGY_PATH, step=200):
         changed = ", ".join(sorted({str(p) for _, p in changes})[:3])
@@ -30,8 +33,8 @@ def main() -> None:
         console.print(f"[dim]changed: {changed}{suffix}[/dim]")
         try:
             ingest_all()
-        except IngestError as e:
-            console.print(f"[red]✗ ingest failed:[/red] {e}")
+        except Exception as e:
+            console.print(f"[red]✗ ingest failed:[/red] {type(e).__name__}: {e}")
 
 
 if __name__ == "__main__":

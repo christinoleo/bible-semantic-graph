@@ -18,6 +18,7 @@ CREATE TABLE IF NOT EXISTS nodes (
   tags_json   TEXT NOT NULL DEFAULT '[]',
   sources_json TEXT NOT NULL DEFAULT '[]',
   canon_json  TEXT NOT NULL DEFAULT '[]',
+  videos_json TEXT NOT NULL DEFAULT '[]',
   argumentation_json TEXT,  -- nullable JSON; NULL for non-argumentative nodes
   body_md     TEXT NOT NULL DEFAULT '',
   body_html   TEXT NOT NULL DEFAULT '',
@@ -40,6 +41,15 @@ CREATE TABLE IF NOT EXISTS edges (
 
 CREATE INDEX IF NOT EXISTS idx_edges_source ON edges(source);
 CREATE INDEX IF NOT EXISTS idx_edges_target ON edges(target);
+
+-- Edge-type display metadata mirrored from `ontology.yaml`.
+-- `label` is the human-readable phrase the UI uses as the section header,
+-- read as "[this node] [label] [linked node]". Falls back to a snake-cased
+-- type name when the row is absent.
+CREATE TABLE IF NOT EXISTS edge_types (
+  name   TEXT PRIMARY KEY,
+  label  TEXT
+);
 
 CREATE TABLE IF NOT EXISTS aliases (
   alias_normalized TEXT NOT NULL,
@@ -88,21 +98,21 @@ def open_db(path: Path, load_vec: bool = True) -> apsw.Connection:
 
 def init_schema(conn: apsw.Connection, embedding_dim: int) -> None:
     """Drop and recreate regular tables. For the sqlite-vec virtual table,
-    DROP+CREATE has compatibility issues across versions, so we DELETE FROM
-    contents if it already exists and only CREATE on first run. This keeps
-    the file inode stable across reingests so SvelteKit's open handle stays
-    valid."""
+    DROP+CREATE has compatibility issues across versions, so we only ensure
+    it exists here — the caller wipes its contents inside the same
+    transaction as the INSERTs (see ingest_all)."""
     # Regular tables: drop and recreate (handles column schema migrations).
-    for table in ["nodes_fts", "edges", "aliases", "nodes", "meta"]:
+    for table in ["nodes_fts", "edges", "edge_types", "aliases", "nodes", "meta"]:
         conn.execute(f"DROP TABLE IF EXISTS {table}")
     conn.execute(SCHEMA)
-    # Vec table: rebuild via DELETE if it exists, CREATE only if missing.
+    # Vec table: create only if missing; do NOT clear here. Clearing
+    # auto-commits separately from the INSERT batch, which under WAL with a
+    # concurrent reader can leave the writer's snapshot inconsistent — the
+    # INSERTs then trip the slug PRIMARY KEY against stale rows.
     existing = list(conn.execute(
         "SELECT name FROM sqlite_master WHERE type='table' AND name='nodes_vec'"
     ))
-    if existing:
-        conn.execute("DELETE FROM nodes_vec")
-    else:
+    if not existing:
         conn.execute(VEC_SCHEMA_TEMPLATE.format(dim=embedding_dim))
 
 

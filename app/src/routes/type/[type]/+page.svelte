@@ -1,22 +1,25 @@
 <script lang="ts">
 	import type { PageProps } from './$types';
+	import StratifiedIndex from '$lib/StratifiedIndex.svelte';
+	import { TYPE_GLYPHS, TYPE_NOTES, TYPE_ACCENT } from '$lib/typeMeta';
+
 	let { data }: PageProps = $props();
+
+	const glyph = $derived(TYPE_GLYPHS[data.type] ?? '◇');
+	const subtitle = $derived(TYPE_NOTES[data.type] ?? '');
+	const accent = $derived(TYPE_ACCENT[data.type] ?? '#5b3a99');
 </script>
 
 <svelte:head>
 	<title>{data.type} — Bible Semantic Graph</title>
 </svelte:head>
 
-<h1><span class="type-pill">{data.type}</span></h1>
-<p class="meta">{data.nodes.length} node{data.nodes.length === 1 ? '' : 's'}</p>
-
-<ul class="list">
-	{#each data.nodes as n (n.slug)}
-		<li>
-			<a href="/n/{n.slug}">{n.name}</a>
-			{#each n.tags as t (t)}
-				<a class="tag" href="/tag/{t}">{t}</a>
-			{/each}
-		</li>
-	{/each}
-</ul>
+<StratifiedIndex
+	title={data.type}
+	eyebrow="Type · Form"
+	{subtitle}
+	{accent}
+	{glyph}
+	nodes={data.nodes}
+	showTypeOnRow={false}
+/>

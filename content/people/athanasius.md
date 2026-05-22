@@ -3,6 +3,7 @@ type: Person
 name: Athanasius of Alexandria
 aliases: [Athanasius the Great, Athanásios, Ἀθανάσιος, Athanasius Alexandrinus]
 edges:
+  - { type: practitioner_of, target: patristic }
   - { type: authored, target: on-the-incarnation }
   - { type: authored, target: against-the-arians }
   - { type: authored, target: life-of-antony }

@@ -3,6 +3,7 @@ type: Person
 name: Basil the Great
 aliases: [Basil of Caesarea, Basíleios, Βασίλειος ὁ Μέγας, Basilius Magnus]
 edges:
+  - { type: practitioner_of, target: patristic }
   - { type: authored, target: on-the-holy-spirit }
   - { type: authored, target: hexaemeron }
   - { type: authored, target: longer-rules }

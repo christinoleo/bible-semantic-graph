@@ -8,6 +8,7 @@ edges:
   - { type: case_of, target: crucifixion-of-jesus }
   - { type: cites, target: gospel-of-mark, note: "Mark 15:21" }
   - { type: cites, target: quran, note: "Q 4:157" }
+  - { type: invokes, target: islamic-dilemma, note: "selectively citing Mark 15:21 as reliable triggers the dilemma" }
 argumentation:
   stance: [for-islam, against-christianity]
   tradition: [islamic-apologetic]

@@ -5,6 +5,7 @@ aliases: [Carmen Christi Argument, Kenosis Defense]
 concerns: [jesus]
 edges:
   - { type: supports, target: jesus-prostration-christian-reading, primary: true }
+  - { type: case_of, target: creed, note: "the Carmen Christi of Phil 2:6-11 is a pre-Pauline Christological hymn — one of the earliest creedal formulas embedded in the NT" }
   - { type: responds_to, target: claim-jesus-prayed-to-the-father-not-as-the-father }
   - { type: cites, target: philippians }
   - { type: invokes, target: kenosis }

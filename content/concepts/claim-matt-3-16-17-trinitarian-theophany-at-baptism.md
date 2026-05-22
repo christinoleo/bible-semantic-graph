@@ -4,8 +4,7 @@ name: Matthew 3:16-17 — Trinitarian Theophany at Jesus's Baptism
 aliases: [Baptism Theophany (Matthew), Jordan Theophany]
 concerns: [jesus]
 edges:
-  - { type: invokes, target: trinity, primary: true }
-  - { type: supports, target: trinity }
+  - { type: supports, target: trinity, primary: true }
   - { type: cites, target: gospel-of-matthew }
   - { type: parallels_with, target: claim-mark-1-10-11-trinitarian-theophany-at-baptism }
   - { type: parallels_with, target: claim-matt-28-19-trinitarian-baptismal-formula }

@@ -9,6 +9,7 @@ edges:
   - { type: cites, target: gospel-of-mark }
   - { type: cites, target: gospel-of-matthew }
   - { type: invokes, target: tawhid }
+  - { type: invokes, target: islamic-dilemma, note: "citing the Gospels as reliable evidence triggers the dilemma" }
 argumentation:
   stance: [for-islam, against-christianity]
   tradition: [islamic-apologetic]

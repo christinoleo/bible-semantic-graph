@@ -4,8 +4,7 @@ name: Mark 14:62 — Son of Man at the Right Hand
 aliases: [Markan Ego Eimi, Sanhedrin "I Am" Saying, Markan Divinity Claim]
 concerns: [jesus]
 edges:
-  - { type: invokes, target: trinity, primary: true }
-  - { type: supports, target: trinity }
+  - { type: supports, target: trinity, primary: true }
   - { type: cites, target: gospel-of-mark }
   - { type: parallels_with, target: claim-john-8-58-before-abraham-was-i-am }
   - { type: parallels_with, target: claim-john-10-30-and-father-are-one }

@@ -1,6 +1,5 @@
 ---
 aliases:
-- Sus
 - Story of Susanna
 - Historia Susannae
 - Σουσάννα

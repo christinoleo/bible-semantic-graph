@@ -5,8 +5,10 @@ aliases: [Survival-After-Crucifixion Implausibility, Roman Crucifixion Lethality
 concerns: [jesus]
 edges:
   - { type: supports, target: jesus-crucifixion-christian-reading, primary: true }
-  - { type: case_of, target: crucifixion-of-jesus }
+  - { type: refuting_case_of, target: crucifixion-of-jesus }
   - { type: refutes, target: claim-ahmadiyya-survival-thesis }
+  - { type: discussed_in, target: seeking-allah-finding-jesus }
+  - { type: discussed_in, target: no-god-but-one }
 argumentation:
   stance: [for-christianity]
   tradition: [christian-apologetic, historical-critical-scholarship]

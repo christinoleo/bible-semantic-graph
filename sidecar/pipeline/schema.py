@@ -34,6 +34,17 @@ class EdgeDecl(BaseModel):
     primary: bool = False
 
 
+class VideoCitation(BaseModel):
+    """A video citation attached to a Node — typically a YouTube debate or
+    lecture that the Node's claim originated in or is illustrated by."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    url: str
+    title: str | None = None
+    timestamp: str | None = None  # e.g. "12:34" — moment in the video
+
+
 class Frontmatter(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
@@ -50,6 +61,9 @@ class Frontmatter(BaseModel):
     # Allowed values: tanakh, protestant, catholic, orthodox-eastern,
     # orthodox-ethiopian. See ADR 0006.
     canon: list[str] = Field(default_factory=list)
+    # External video citations — typically YouTube debates or lectures that
+    # originate or illustrate the Node's claim. Rendered as chips in the UI.
+    videos: list[VideoCitation] = Field(default_factory=list)
     # For "relational" Nodes (an Argument, Event, Theory, etc. that exists in
     # virtue of its relata): the slugs of the entities the Node is between.
     # Materialized by the pipeline as `concerns` edges. Allows the UI to
@@ -98,6 +112,7 @@ class NodeRecord(BaseModel):
     tags: list[str]
     sources: list[str]
     canon: list[str]
+    videos: list[VideoCitation]
     argumentation: Argumentation | None
     body_md: str
     body_html: str

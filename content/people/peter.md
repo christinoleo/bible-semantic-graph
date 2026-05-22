@@ -1,7 +1,7 @@
 ---
 type: Person
 name: Peter
-aliases: [Simon, Simeon, Cephas, Kēphas, Πέτρος, Κηφᾶς, שִׁמְעוֹן, Simon Peter]
+aliases: [Simon Peter, Cephas, Kēphas, Πέτρος, Κηφᾶς, "Simon bar Jonah", "Simeon Peter"]
 edges:
   - { type: sibling_of, target: andrew }
   - { type: disciple_of, target: jesus }

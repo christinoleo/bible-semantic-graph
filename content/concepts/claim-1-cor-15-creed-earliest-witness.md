@@ -5,9 +5,14 @@ aliases: [Pre-Pauline Creed, 1 Corinthians 15 Creedal Formula]
 concerns: [jesus]
 edges:
   - { type: supports, target: jesus-crucifixion-christian-reading, primary: true }
-  - { type: case_of, target: crucifixion-of-jesus }
+  - { type: case_of, target: creed, note: "earliest extant Christian creedal formula" }
+  - { type: refuting_case_of, target: crucifixion-of-jesus }
   - { type: refutes, target: claim-tahrif-explains-christian-crucifixion-witness }
+  - { type: supports, target: islamic-dilemma, note: "the 1 Cor 15 creed (~35 CE) attests crucifixion+resurrection 6 centuries before tahrif could plausibly act — the timeline cuts against the corruption thesis" }
   - { type: cites, target: 1-corinthians, note: "1 Cor 15:3-8" }
+  - { type: discussed_in, target: the-case-for-the-resurrection-of-jesus }
+  - { type: discussed_in, target: no-god-but-one }
+  - { type: discussed_in, target: i-dont-have-enough-faith-to-be-an-atheist }
 argumentation:
   stance: [for-christianity]
   tradition: [christian-apologetic, historical-critical-scholarship]

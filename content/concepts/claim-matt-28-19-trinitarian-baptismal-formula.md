@@ -4,8 +4,7 @@ name: Matthew 28:19 — Baptize in the Name of the Father, Son, and Holy Spirit
 aliases: [Great Commission Triadic Formula, Trinitarian Baptismal Formula]
 concerns: [jesus]
 edges:
-  - { type: invokes, target: trinity, primary: true }
-  - { type: supports, target: trinity }
+  - { type: supports, target: trinity, primary: true }
   - { type: cites, target: gospel-of-matthew }
   - { type: parallels_with, target: claim-matt-3-16-17-trinitarian-theophany-at-baptism }
 argumentation:

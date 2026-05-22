@@ -8,6 +8,7 @@ edges:
   - { type: supports, target: jesus-was-a-muslim-prophet }
   - { type: case_of, target: prostration-of-jesus }
   - { type: invokes, target: tawhid }
+  - { type: invokes, target: islamic-dilemma, note: "the Matt 26:39 prostration claim depends on Gospel reliability — which triggers the dilemma" }
 argumentation:
   stance: [for-islam, against-christianity]
   tradition: [islamic-apologetic]

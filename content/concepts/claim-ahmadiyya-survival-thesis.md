@@ -6,7 +6,11 @@ concerns: [jesus]
 edges:
   - { type: supports, target: jesus-crucifixion-islamic-reading, primary: true }
   - { type: case_of, target: crucifixion-of-jesus }
+  - { type: presupposes, target: tahrif, note: "requires the Gospel record of Jesus's death (Mk 15:44-45 centurion verification, Jn 19:34 spear + blood and water, Jn 20:27 nail wounds shown) to be corrupted" }
+  - { type: invokes, target: islamic-dilemma, note: "the survival thesis cites Q 4:157 to override Gospel testimony — but to cite the Gospels selectively as evidence of crucifixion-without-death, while dismissing their account of death-itself, triggers the dilemma" }
   - { type: cites, target: quran, note: "Q 4:157 — read as denying death, not the cross itself" }
+  - { type: discussed_in, target: seeking-allah-finding-jesus, note: "Qureshi's natal Ahmadi context — engaged at length" }
+  - { type: discussed_in, target: no-god-but-one }
 argumentation:
   stance: [for-islam]
   tradition: [ahmadiyya]

@@ -1,5 +1,7 @@
 <script lang="ts">
 	import type { PageProps } from './$types';
+	import StratifiedIndex from '$lib/StratifiedIndex.svelte';
+
 	let { data }: PageProps = $props();
 </script>
 
@@ -7,14 +9,12 @@
 	<title>#{data.tag} — Bible Semantic Graph</title>
 </svelte:head>
 
-<h1>#{data.tag}</h1>
-<p class="meta">{data.nodes.length} node{data.nodes.length === 1 ? '' : 's'}</p>
-
-<ul class="list">
-	{#each data.nodes as n (n.slug)}
-		<li>
-			<a href="/n/{n.slug}">{n.name}</a>
-			<span class="type-pill">{n.type}</span>
-		</li>
-	{/each}
-</ul>
+<StratifiedIndex
+	title="#{data.tag}"
+	eyebrow="Tag"
+	subtitle="Every node carrying this tag"
+	accent="#5b3a99"
+	glyph="#"
+	nodes={data.nodes}
+	showTypeOnRow={true}
+/>

@@ -4,7 +4,7 @@ name: Christian Reading of the Crucifixion (Multiple Attestation Defense)
 aliases: [Historical Defense of the Crucifixion, Multiple-Attestation Argument for the Cross]
 concerns: [jesus]
 edges:
-  - { type: case_of, target: crucifixion-of-jesus, primary: true }
+  - { type: refuting_case_of, target: crucifixion-of-jesus, primary: true }
   - { type: responds_to, target: jesus-crucifixion-islamic-reading, primary: true }
   - { type: refutes, target: jesus-crucifixion-islamic-reading }
   - { type: cites, target: gospel-of-matthew, note: "Matt 27 — passion narrative" }

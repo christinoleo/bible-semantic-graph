@@ -6,10 +6,12 @@ concerns: [jesus]
 edges:
   - { type: supports, target: ahmad-prophecy-christian-reading, primary: true }
   - { type: refutes, target: claim-pauline-corruption-of-jesus-teaching }
-  - { type: case_of, target: tahrif }
+  - { type: supports, target: islamic-dilemma, note: "earliest Christological strata (~20 years post-crucifixion) already affirm Jesus's deity — the 'Pauline corruption' route assumed by Islamic tahrif cannot be located historically" }
+  - { type: refuting_case_of, target: tahrif }
   - { type: cites, target: philippians, note: "Phil 2:6-11" }
   - { type: cites, target: 1-corinthians, note: "1 Cor 8:6" }
   - { type: cites, target: colossians, note: "Col 1:15-20" }
+  - { type: discussed_in, target: no-god-but-one }
 argumentation:
   stance: [for-christianity]
   tradition: [christian-apologetic, historical-critical-scholarship]

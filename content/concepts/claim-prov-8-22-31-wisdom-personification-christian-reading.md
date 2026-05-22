@@ -4,8 +4,7 @@ name: Proverbs 8:22-31 — Personified Wisdom as Pre-Existent Son
 aliases: [Hokmah Christology, Wisdom Christology, Prov 8 Trinitarian Reading]
 concerns: [jesus]
 edges:
-  - { type: invokes, target: trinity, primary: true }
-  - { type: supports, target: trinity }
+  - { type: supports, target: trinity, primary: true }
   - { type: cites, target: proverbs }
   - { type: parallels_with, target: claim-john-17-5-pre-existence-glory }
   - { type: contradicts, target: claim-prov-8-22-arian-reading, note: "forward ref — Arius read 'YHWH created me' as denying Christ's eternal generation" }

@@ -3,6 +3,7 @@ type: Person
 name: Justin Martyr
 aliases: [Justin the Philosopher, Iustinus Martyr, Ἰουστῖνος ὁ Μάρτυς]
 edges:
+  - { type: practitioner_of, target: patristic }
   - { type: authored, target: first-apology }
   - { type: authored, target: second-apology }
   - { type: authored, target: dialogue-with-trypho }

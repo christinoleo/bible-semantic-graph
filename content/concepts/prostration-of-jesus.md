@@ -1,7 +1,7 @@
 ---
 type: Concept
-name: Prostration of Jesus
-aliases: [Jesus Falling on His Face, Jesus's Bodily Submission, Gethsemane Prostration]
+name: Jesus's Prostration
+aliases: [Prostration of Jesus, Jesus Falling on His Face, Jesus's Bodily Submission, Gethsemane Prostration]
 edges:
   - { type: discussed_in, target: gospel-of-matthew }
   - { type: discussed_in, target: gospel-of-mark }

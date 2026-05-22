@@ -6,7 +6,7 @@ concerns: []
 edges:
   - { type: supports, target: ahmad-prophecy-christian-reading, primary: true }
   - { type: refutes, target: claim-paraclete-described-as-coming-prophet }
-  - { type: case_of, target: ahmad-prophecy }
+  - { type: refuting_case_of, target: ahmad-prophecy }
   - { type: cites, target: acts, note: "Acts 2:1-4" }
   - { type: cites, target: gospel-of-john, note: "John 14-16" }
 argumentation:

@@ -5,8 +5,11 @@ aliases: [Tacitus Annales 15.44 on Christus]
 concerns: [jesus]
 edges:
   - { type: supports, target: jesus-crucifixion-christian-reading, primary: true }
-  - { type: case_of, target: crucifixion-of-jesus }
-  - { type: cites, target: gospel-of-luke, note: "placeholder — primary citation is Tacitus, Annales 15.44 (no Node yet)" }
+  - { type: refutes, target: claim-ahmadiyya-survival-thesis }
+  - { type: refutes, target: claim-q4-157-categorical-crucifixion-denial }
+  - { type: refuting_case_of, target: crucifixion-of-jesus }
+  - { type: supports, target: islamic-dilemma, note: "hostile Roman historian — execution attested independently of Christian transmission, predating tahrif by centuries" }
+  - { type: discussed_in, target: no-god-but-one }
 argumentation:
   stance: [for-christianity]
   tradition: [christian-apologetic, historical-critical-scholarship]

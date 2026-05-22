@@ -3,6 +3,7 @@ type: Person
 name: Clement of Alexandria
 aliases: [Titus Flavius Clemens, Klēmēs Alexandreus, Κλήμης ὁ Ἀλεξανδρεύς]
 edges:
+  - { type: practitioner_of, target: patristic }
   - { type: authored, target: protrepticus }
   - { type: authored, target: paedagogus }
   - { type: authored, target: stromata }

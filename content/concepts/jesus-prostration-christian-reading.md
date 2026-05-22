@@ -4,7 +4,7 @@ name: Christian Reading of Jesus's Prostration
 aliases: [Filial-Submission Reading, Two-Natures Reading of Gethsemane Prostration]
 concerns: [jesus]
 edges:
-  - { type: case_of, target: prostration-of-jesus, primary: true }
+  - { type: refuting_case_of, target: prostration-of-jesus, primary: true }
   - { type: responds_to, target: jesus-prostration-islamic-reading, primary: true }
   - { type: cites, target: gospel-of-matthew, note: "Matt 26:39 — submission of the Son to the Father" }
   - { type: cites, target: gospel-of-luke, note: "Luke 22:41 — kneeling, parallel pattern" }

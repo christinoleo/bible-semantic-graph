@@ -6,7 +6,8 @@ concerns: []
 edges:
   - { type: supports, target: ahmad-prophecy-christian-reading, primary: true }
   - { type: refutes, target: claim-tahrif-corruption-of-nt }
-  - { type: case_of, target: tahrif }
+  - { type: refuting_case_of, target: tahrif }
+  - { type: supports, target: islamic-dilemma, note: "independent reconstruction of the NT from patristic quotations bolsters the second horn — the text was stable centuries before Muhammad" }
 argumentation:
   stance: [for-christianity]
   tradition: [christian-apologetic, historical-critical-scholarship, patristic]

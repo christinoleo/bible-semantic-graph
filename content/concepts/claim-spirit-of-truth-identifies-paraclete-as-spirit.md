@@ -6,7 +6,7 @@ concerns: []
 edges:
   - { type: supports, target: ahmad-prophecy-christian-reading, primary: true }
   - { type: refutes, target: claim-paraclete-was-periklytos }
-  - { type: case_of, target: ahmad-prophecy }
+  - { type: refuting_case_of, target: ahmad-prophecy }
   - { type: cites, target: gospel-of-john, note: "John 15:26, 16:13" }
 argumentation:
   stance: [for-christianity]

@@ -3,6 +3,7 @@ type: Person
 name: Gregory of Nazianzus
 aliases: [Gregory the Theologian, Grēgórios ho Theológos, Γρηγόριος ὁ Θεολόγος, Gregorius Nazianzenus]
 edges:
+  - { type: practitioner_of, target: patristic }
   - { type: authored, target: five-theological-orations }
   - { type: authored, target: orations }
   - { type: authored, target: poemata }

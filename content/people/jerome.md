@@ -3,6 +3,7 @@ type: Person
 name: Jerome
 aliases: [Eusebius Sophronius Hieronymus, Hieronymus, Saint Jerome, Iēronymos]
 edges:
+  - { type: practitioner_of, target: patristic }
   - { type: authored, target: vulgate }
   - { type: authored, target: de-viris-illustribus }
   - { type: authored, target: commentary-on-isaiah }

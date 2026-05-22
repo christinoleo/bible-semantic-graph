@@ -17,4 +17,4 @@ tags: [quran, tawhid, christology]
 sources: ["Q 5:72"]
 ---
 
-Quran 5:72 attributes to the Messiah: "O Children of Israel, worship Allah, my Lord and your Lord" — and immediately declares that anyone who associates partners with Allah is barred from paradise. The Quranic [[jesus]] both teaches *tawḥīd* and pre-emptively condemns the Trinitarian formula his later followers adopt.
+Quran 5:72 attributes to the Messiah: "O Children of Israel, worship Allah, my Lord and your Lord" — and immediately declares that anyone who associates partners with Allah is barred from paradise. The Quranic [[jesus]] both teaches [[tawhid|*tawḥīd*]] and pre-emptively condemns the Trinitarian formula his later followers adopt.

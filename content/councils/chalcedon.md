@@ -8,6 +8,9 @@ edges:
   - { type: condemned, target: dioscorus-of-alexandria }
   - { type: defined_doctrine, target: chalcedonian-definition }
   - { type: defined_doctrine, target: two-natures-of-christ }
+  - { type: cites, target: tome-of-leo, note: "ratified at session II, 451 — 'Peter has spoken through Leo'" }
+  - { type: cites, target: nicene-creed, note: "explicitly reaffirmed as the sufficient symbol of faith" }
+  - { type: cites, target: nicene-constantinopolitan-creed, note: "ratified together with N as the church's standing creed" }
   - { type: cites, target: leo-i }
   - { type: cites, target: cyril-of-alexandria }
   - { type: follows, target: ephesus }
